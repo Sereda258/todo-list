@@ -1,0 +1,290 @@
+  @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Delicious Handrawn', cursive, 'Poppins', 'Times New Roman', sans-serif;
+  
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Style the entire scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Style the thumb */
+::-webkit-scrollbar-thumb {
+    background: #E2A6C0;
+}
+
+/* Style the track */
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+
+html {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../public/images/todobg-landscape.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: center;
+}
+
+.App {
+    margin: 5% auto;
+    width: 50%;
+    padding: 1rem;
+}
+
+.logout {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    font-size: 1rem;
+    border: white 1px solid;
+    padding: .5rem;
+    border-radius: 5%;
+    box-shadow: 1px 1px 1px grey;
+    background-color: white;
+}
+
+.logout:active {
+    box-shadow: .1px .1px .1px grey;
+}
+
+.signin-signup {
+    padding: .5rem;
+    border-radius: 5%;
+    font-size: 1rem;
+    box-shadow: 1px 1px 1px grey;
+}
+
+.signin-signup:hover {
+    padding: .5rem;
+    border-radius: 5%;   
+    box-shadow: 1px 1px 1px grey;
+    color: #E2A6C0
+}
+
+.signin-signup:active {
+    padding: .5rem;
+    border-radius: 5%;   
+    box-shadow: .1px .1px .1px grey;
+    color: #E2A6C0
+}
+
+.logout:hover {
+    background-color: grey;
+    color: white;
+}
+
+.logout button {
+    position: absolute;
+}
+
+.todo-form {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.todos {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; 
+    max-height: 40rem;
+    overflow-y: auto; 
+    scrollbar-color: black;
+}
+
+.todo {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: inherit;
+}
+
+.task {
+    margin-left: 1rem;
+}
+
+.action-buttons {
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.todo-form button  {
+    color: black;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+button:hover {
+    color: #E3A6C1;
+}
+
+button {
+    color: black;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: .5rem;
+}
+
+.completed {
+    text-decoration: line-through;
+} 
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+input {
+    /* width: 30rem; */
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus {  
+    outline: .1rem solid #E3A6C1;
+}
+
+
+/* Tablets Landscape */
+
+@media screen and (orientation: landscape) and (min-width: 1180px) and (max-width: 1400px){
+    .App {
+        margin: 15% auto;
+}
+   .todos {
+        max-height: 20rem;
+}
+}  
+
+@media screen and (orientation: landscape) and (max-width: 1180px){
+    .App {
+        margin: 15% auto;
+    }
+    .todos {
+        max-height: 20rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}  
+
+@media screen and (orientation: landscape) and (max-width: 1024px){
+    .App {
+        margin: 10% auto;
+    }
+}  
+
+@media screen and (orientation: landscape) and (max-width: 1024px) and (max-height: 800px){
+    .App {
+        margin: 15% auto;
+    }
+}  
+
+@media screen and (orientation: landscape) and (max-width: 1024px) and (max-height: 600px){
+    .App {
+        margin: 10% auto;
+    }
+}  
+
+/* Phone Landscape */
+
+@media screen and (orientation: landscape) and (max-width: 915px){
+    .App {
+    margin: 5% auto;
+}
+.todos {
+    max-height: 15rem;
+    width: 100%
+}
+}  
+
+@media screen and (orientation: landscape) and (max-width: 750px){
+    .App {
+    margin: 10% auto;
+}
+
+.todos {
+    max-height: 10rem;
+}
+}  
+
+/* iPhone XR, iPhone 12 Pro, Pixel 5, Samsung Galaxy 8, Samsung Galaxys */
+
+@media screen and (orientation: portrait){
+    html {
+        background-image: url('../public/images/todobg-mobile.jpg');
+    }
+
+    .App {
+        margin: 50% auto;
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+    
+    .todos {
+        margin-top: 1rem;
+        grid-template-columns: repeat(1, 1fr);
+        height: 40vh;
+        width: 100%;
+    }
+
+    button {
+        margin: .2rem;
+        font-size: 1rem;
+    }
+}
+
+
+/*  iPhone SE */
+
+@media screen and (max-height: 667px) and (orientation: portrait){
+    .App {
+        margin: 40% auto;
+        width: 70%;
+    }
+}
+
+/* Galaxy Fold */
+
+@media screen and (max-width: 300px) and (orientation: portrait){
+    .App {
+        margin: 50% auto;
+        width: 90%;
+    }
+}
+
+/* Tablets */
+
+@media screen and (min-width: 540px) and (orientation: portrait){
+    .App {
+        margin: 30% auto;
+        width: 60%;
+    }
+}
